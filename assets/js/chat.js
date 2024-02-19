@@ -9,13 +9,11 @@ const send_button = document.querySelector(`#send-button`);
 let prompt_lock = false;
 const messageHistory = [];
 
-var model = "mistralai/Mistral-7B-Instruct-v0.1";
+var model = "gpt-3.5-turbo-16k";
 var temperatureString = "0.6°";
 var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
-var api_url = "https://api.deepinfra.com/v1/openai/chat/completions"
-var api_key = "RdtTl8ygiOqufcriV9q2tW5aRgSqvTIz"
-const system_message = "You are A.N.T a LLM made by 12 year old alex rose's group  sa.lex"; // You can change this message
+
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function() {
 	var modelSelect = document.getElementById(`model`);
@@ -50,7 +48,7 @@ message_input.addEventListener("blur", () => {
 });
 
 const delete_conversations = async () => {
-    const confirmed = confirm("Are you sure you want to delete all conversations with ANT?");
+    const confirmed = confirm("Are you sure you want to delete all conversations?");
     if (confirmed) {
         localStorage.clear();
         await new_conversation();
@@ -166,7 +164,7 @@ const ask_gpt = async (message) => {
        method: "POST",   
        headers: {
        "Content-Type": "application/json",
-       Authorization: `Bearer ${api_key}`
+       Authorization: `Bearer ${strIndex}`
        },
        body: JSON.stringify(postData)
        })
