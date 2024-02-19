@@ -9,11 +9,12 @@ const send_button = document.querySelector(`#send-button`);
 let prompt_lock = false;
 const messageHistory = [];
 
-var model = "gpt-3.5-turbo-16k";
+var model = "mistralai/Mistral-7B-Instruct-v0.1";
 var temperatureString = "0.6°";
 var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
-
+var api_url = "https://api.deepinfra.com/v1/openai/chat/completions"
+var api_key =
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function() {
 	var modelSelect = document.getElementById(`model`);
@@ -48,7 +49,7 @@ message_input.addEventListener("blur", () => {
 });
 
 const delete_conversations = async () => {
-    const confirmed = confirm("Are you sure you want to delete all conversations?");
+    const confirmed = confirm("Are you sure you want to delete all conversations with ANT?");
     if (confirmed) {
         localStorage.clear();
         await new_conversation();
