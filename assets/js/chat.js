@@ -14,7 +14,7 @@ var temperatureString = "0.6°";
 var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
 var api_url = "https://api.deepinfra.com/v1/openai/chat/completions"
-var api_key =
+var api_key = "RdtTl8ygiOqufcriV9q2tW5aRgSqvTIz"
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function() {
 	var modelSelect = document.getElementById(`model`);
@@ -165,7 +165,7 @@ const ask_gpt = async (message) => {
        method: "POST",   
        headers: {
        "Content-Type": "application/json",
-       Authorization: `Bearer ${strIndex}`
+       Authorization: `Bearer ${api_key}`
        },
        body: JSON.stringify(postData)
        })
