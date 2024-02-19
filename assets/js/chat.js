@@ -15,6 +15,7 @@ var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
 var api_url = "https://api.deepinfra.com/v1/openai/chat/completions"
 var api_key = "RdtTl8ygiOqufcriV9q2tW5aRgSqvTIz"
+const system_message = "You are A.N.T a LLM made by 12 year old alex rose's group  sa.lex"; // You can change this message
 // Add event listeners
 document.addEventListener("DOMContentLoaded", function() {
 	var modelSelect = document.getElementById(`model`);
