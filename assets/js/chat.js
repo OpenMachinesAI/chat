@@ -242,7 +242,7 @@ const ask_gpt = async (message) => {
 		if (cursorDiv) cursorDiv.parentNode.removeChild(cursorDiv);
         
       if (e.name != `AbortError`) {
-      let error_message = `Oops ! Something went wrong, please try again later. Check error in console.`;
+      let error_message = `Sorry, I cannot continue my response beyond this point. 😔`;
 
       document.getElementById(`gpt_${window.token}`).innerHTML = error_message;
       add_message(window.conversation_id, "assistant", error_message);
