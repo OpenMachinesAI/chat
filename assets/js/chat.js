@@ -9,7 +9,7 @@ const send_button = document.querySelector(`#send-button`);
 let prompt_lock = false;
 const messageHistory = [];
 
-var model = "gpt-3.5-turbo-16k";
+var model = "mistralai/Mistral-7B-Instruct-v0.1";
 var temperatureString = "0.6°";
 var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
