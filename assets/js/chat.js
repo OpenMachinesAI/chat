@@ -9,7 +9,7 @@ const send_button = document.querySelector(`#send-button`);
 let prompt_lock = false;
 const messageHistory = [];
 
-var model = "01-ai/Yi-34B-Chat";
+var model = "meta-llama/Meta-Llama-3.1-70B-Instruct";
 var temperatureString = "0.6°";
 var cleanedString = temperatureString.replace(/[^0-9\.]/g, '');
 var temperature = parseFloat(cleanedString);
